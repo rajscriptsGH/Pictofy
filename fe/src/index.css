@@ -10,3 +10,13 @@
   box-sizing: border-box;
   font-family: Outfit, "Inter", sans-serif;
 }
+
+.custom-stars::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  z-index: 0;
+}
