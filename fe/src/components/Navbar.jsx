@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <div className='bg-slate-700 py-2 px-2 lg:px-8 rounded-lg z-[999] opacity-100 flex justify-between'>
 
-            <Link className='flex items-center gap-3' to='/'>
+            <Link className='flex items-center gap-2' to='/'>
                 <img className='lg:w-10 md:w-8' src="/assets/favicon_red.svg" />
                 <span className='font-bold lg:text-2xl'>Pictofy</span>
             </Link>
