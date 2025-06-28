@@ -18,11 +18,22 @@ const Header = () => {
             </button>
 
             <div className='flex items-center justify-center gap-2 mt-8'>
-                {Array(6).fill('').map((item, index) => (
-                    <img className='rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer max-sm:w-12 mt-3 lg:w-[90px]'
-                        src={index % 2 == 0 ? "/assets/sample_img_1.png" : "/assets/sample_img_2.png"}
+                {[
+                    "/assets/sample5.jpg",
+                    "/assets/sample1.png",
+                    "/assets/sample6.jpg",
+                    "/assets/sample2.jpg",
+                    "/assets/sample3.png",
+                    "/assets/sample4.jpg",
+                ].map((src, index) => (
+                    <img className='rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer max-sm:w-12 mt-3'
+                        src={src}
                         key={index}
-                        width={70} />
+                        width={70}
+                        height={70}
+                        style={{ width: "70px", height: "70px" }}
+                        alt={`sample-${index + 1}`}
+                    />
                 ))}
             </div>
             <p className='text-center mt-4 font-light'>Generated images from imagify</p>
