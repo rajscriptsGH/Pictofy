@@ -8,7 +8,7 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     return (
-        <div className='bg-slate-700 py-2 px-2 lg:px-8 rounded-lg z-[999] opacity-100 flex justify-between'>
+        <div className='bg-transparent border py-2 px-3 lg:px-8 rounded-full z-[999] opacity-100 flex justify-between'>
 
             <Link className='flex items-center gap-2' to='/'>
                 <img className='lg:w-10 md:w-8' src="/assets/favicon_red.svg" />
