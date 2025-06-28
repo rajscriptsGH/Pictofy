@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="py-8 px-5 sm:px-10 md:px-15 lg:px-32 min-h-screen text-white"
       style={{
-        backgroundImage: `radial-gradient(white 1px, transparent 1px), linear-gradient(to bottom right, #04030e, #1a0ea1, #050511)`,
+        backgroundImage: `radial-gradient(black 1px, transparent 1px), linear-gradient(to bottom right, #04030e, #1a0ea1, #050511)`,
         backgroundSize: "30px 30px, cover",
       }}>
 
