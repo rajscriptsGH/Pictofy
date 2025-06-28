@@ -17,15 +17,15 @@ const Header = () => {
                 <img className='w-6' src="/assets/star_group.png" alt="" />
             </button>
 
-            <div className='flex items-center justify-center gap-2'>
+            <div className='flex items-center justify-center gap-2 mt-8'>
                 {Array(6).fill('').map((item, index) => (
-                    <img className='rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer max-sm:w-12 mt-5 lg:w-[90px]'
+                    <img className='rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer max-sm:w-12 mt-3 lg:w-[90px]'
                         src={index % 2 == 0 ? "/assets/sample_img_1.png" : "/assets/sample_img_2.png"}
                         key={index}
                         width={70} />
                 ))}
             </div>
-            <p className='text-center mt-2 font-light'>Generated images from imagify</p>
+            <p className='text-center mt-4 font-light'>Generated images from imagify</p>
 
         </div>
     )
