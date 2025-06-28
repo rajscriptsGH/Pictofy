@@ -25,7 +25,7 @@ const Header = () => {
                         width={70} />
                 ))}
             </div>
-            <p className='text-center mt-3'>Generated images from imagify</p>
+            <p className='text-center mt-2 font-light'>Generated images from imagify</p>
 
         </div>
     )
