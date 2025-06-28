@@ -8,7 +8,7 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     return (
-        <div className='bg-transparent border py-2 px-3 lg:px-8 rounded-full z-[999] opacity-100 flex justify-between hover:border-sky-600'>
+        <div className='max-w[1000px] min-w[400px] bg-transparent border py-2 px-3 lg:px-8 rounded-full z-[999] opacity-100 flex justify-between hover:border-sky-600'>
 
             <Link className='flex items-center gap-2' to='/'>
                 <img className='lg:w-10 md:w-8' src="/assets/favicon_red.svg" />
@@ -31,9 +31,9 @@ const Navbar = () => {
                         </div>
                     </div>
                     :
-                    <div className='flex gap-3 lg:gap-12 items-center cursor-pointer'>
+                    <div className='flex gap-2 lg:gap-12 items-center cursor-pointer'>
                         <p onClick={() => navigate('/buy')} className='lg:text-2xl cursor-pointer'>Pricing</p>
-                        <div className='flex items-center justify-center h-10 lg:h-12  bg-slate-950 hover:bg-slate-800 px-16  rounded-xl'>
+                        <div className='flex items-center justify-center h-10 lg:h-12  bg-slate-950 hover:bg-slate-800 px-12 lg:px-20  rounded-xl'>
                             <p className='text-center font-semibold '>Login</p>
                         </div>
                     </div>
