@@ -12,12 +12,20 @@ const Header = () => {
 
             <p className='text-center mt-6 max-w-[350px] sm:max-w-[560px]'>Unleash your creativity with AI. Turn your imagination into visual art in seconds just type, and watch the magic happen.</p>
 
-            <button className='flex text-center gap-2 bg-blue-800 px-7 py-3 sm:px-12 psm:y-4 rounded-3xl mt-8 cursor-pointer hover:bg-blue-700 transition-all duration-500 hover:scale-x-105 '>
+            <button className='flex text-center gap-2 bg-blue-700 px-7 py-3 sm:px-12 psm:y-4 rounded-3xl mt-8 cursor-pointer hover:bg-blue-800 transition-all duration-500 hover:scale-x-105 '>
                 <p>Generate images</p>
                 <img className='w-6' src="/assets/star_group.png" alt="" />
             </button>
 
-            
+            <div className='flex items-center justify-center gap-2'>
+                {Array(6).fill('').map((item, index) => (
+                    <img className='rounded-lg hover:scale-105 transition-all duration-500 cursor-pointer max-sm:w-12 mt-5 lg:w-[90px]'
+                        src={index % 2 == 0 ? "/assets/sample_img_1.png" : "/assets/sample_img_2.png"}
+                        key={index}
+                        width={70} />
+                ))}
+            </div>
+            <p className='text-center mt-3'>Generated images from imagify</p>
 
         </div>
     )
