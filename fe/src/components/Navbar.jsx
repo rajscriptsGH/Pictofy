@@ -31,10 +31,10 @@ const Navbar = () => {
                         </div>
                     </div>
                     :
-                    <div className='flex gap-2 lg:gap-12 items-center cursor-pointer'>
-                        <p onClick={() => navigate('/buy')} className='lg:text-2xl cursor-pointer'>Pricing</p>
-                        <div className='flex items-center justify-center h-10 lg:h-12  bg-slate-950 hover:bg-slate-800 px-12 lg:px-20  rounded-xl'>
-                            <p className='text-center font-semibold '>Login</p>
+                    <div className='flex gap-2 lg:gap-14 items-center cursor-pointer'>
+                        <p onClick={() => navigate('/buy')} className='lg:text-[23px] lg:text-2xl font-medium cursor-pointer'>Pricing</p>
+                        <div className='flex items-center justify-center h-10 lg:h-12   px-12 lg:px-20  rounded-xl bg-gray-900'>
+                            <p className='text-center font-medium  lg:text-[23px]'>Login</p>
                         </div>
                     </div>
             }
