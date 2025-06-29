@@ -2,7 +2,7 @@ import React from 'react'
 
 const HowItWorks = () => {
     return (
-        <div className='h-[80vh] flex flex-col items-center justify-center mt-20'>
+        <div className='flex flex-col items-center justify-center mt-20'>
             <div className='flex flex-col items-center mb-12'>
                 <h1 className='text-3xl lg:text-5xl font-semibold mb-4'>How its Works</h1>
                 <p className='font-light lg:text-2xl'>Transform Words into stunning images</p>
