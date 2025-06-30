@@ -12,7 +12,7 @@ const Result = () => {
 
     return (
         <form onSubmit={onSubmitHandler} className='flex flex-col items-center gap-4'>
-            <div className='mt-7'>
+            <div className='mt-12'>
                 <div className='relative'>
                     <img className='h-[250px] rounded-lg' src={image} />
                     <spam className={`absolute bottom-0 left-0 bg-blue-400 h-1 ${loading ? 'w-full rounded-full transition-all duration-[10s]' : 'w-0'}`} ></spam>
