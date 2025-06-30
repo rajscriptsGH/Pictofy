@@ -3,7 +3,7 @@ import React from 'react'
 const BuyCredit = () => {
     return (
         <div className='flex flex-col items-center mt-10'>
-            <div className='flex flex-col items-center gap-8'>
+            <div className='flex flex-col items-center gap-8 mb-5'>
                 <p className='border border-sky-200 px-12 py-2 rounded-full'>OUR PLAN</p>
                 <h1 className='text-3xl'>Choose the plan</h1>
             </div>
