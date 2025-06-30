@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
 
 const BuyCredit = () => {
+    const { user } = useContext(AppContext)
+
     return (
         <div className='flex flex-col items-center mt-10'>
             <div className='flex flex-col items-center gap-8 mb-5'>
@@ -14,7 +17,7 @@ const BuyCredit = () => {
                     <p className='font-light mb-3'>Best for personal use</p>
 
                     <p className=''><span className='text-2xl font-semibold'>$10</span> / 100 credits</p>
-                    <button className='bg-black px-8 py-2 rounded-3xl'>Get Started</button>
+                    <button className='bg-black px-8 py-2 rounded-3xl'>{user ? 'Purchase' : 'Get Started'} </button>
                 </div>
                 <div className='border px-5 md:px-10 py-5 md:py-7 flex flex-col items-start rounded-xl transition-all duration-300 hover:scale-105 gap-3'>
                     <img src="/assets/favicon_red.svg" />
@@ -22,7 +25,7 @@ const BuyCredit = () => {
                     <p className='font-light mb-3'>Best for bussiness use</p>
 
                     <p className=''><span className='text-2xl font-semibold'>$30</span> / 100 credits</p>
-                    <button className='bg-black px-8 py-2 rounded-3xl'>Get Started</button>
+                    <button className='bg-black px-8 py-2 rounded-3xl'>{user ? 'Purchase' : 'Get Started'}</button>
                 </div>
                 <div className='border px-5 md:px-10 py-5 md:py-7 flex flex-col items-start rounded-xl transition-all duration-300 hover:scale-105 gap-3'>
                     <img src="/assets/favicon_red.svg" />
@@ -30,7 +33,7 @@ const BuyCredit = () => {
                     <p className='font-light mb-3'>Best for enterprise use</p>
 
                     <p className=''><span className='text-2xl font-semibold'>$50</span> / 100 credits</p>
-                    <button className='bg-black px-8 py-2 rounded-3xl'>Get Started</button>
+                    <button className='bg-black px-8 py-2 rounded-3xl'>{user ? 'Purchase' : 'Get Started'}</button>
                 </div>
             </div>
         </div>
