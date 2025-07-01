@@ -10,7 +10,7 @@ const Login = () => {
                     <p>Welcome back!  Please sign in to continue</p>
                 </div>
                 <div>
-                    <div className='flex flex-col items-center gap-3'>
+                    <div className='flex flex-col items-center gap-2'>
                         <div className="relative w-full max-w-sm mb-4">
                             <img
                                 src="/assets/profile_icon.png"
@@ -29,7 +29,7 @@ const Login = () => {
                             <img
                                 src="/assets/email_icon.svg"
                                 alt="email"
-                                className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5"
+                                className="absolute left-4 top-1/2 transform -translate-y-1/2 "
                             />
                             <input
                                 type="email"
@@ -43,7 +43,7 @@ const Login = () => {
                             <img
                                 src="/assets/lock_icon.svg"
                                 alt="lock"
-                                className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5"
+                                className="absolute left-4 top-1/2 transform -translate-y-1/2 "
                             />
                             <input
                                 type="password"
