@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 import { Link, useNavigate } from 'react-router-dom'
+import Login from './Login'
 
 
 const Navbar = () => {
@@ -33,7 +34,8 @@ const Navbar = () => {
                     :
                     <div className='flex gap-2 lg:gap-14 items-center cursor-pointer'>
                         <p onClick={() => navigate('/buy')} className='lg:text-[23px] lg:text-2xl font-medium cursor-pointer'>Pricing</p>
-                        <div className='flex items-center justify-center h-10 lg:h-12   px-9 lg:px-12  rounded-xl bg-gray-900'>
+                        <div
+                            className='flex items-center justify-center h-10 lg:h-12   px-9 lg:px-12  rounded-xl bg-gray-900'>
                             <p className='text-center font-medium  lg:text-[23px]'>Login</p>
                         </div>
                     </div>
