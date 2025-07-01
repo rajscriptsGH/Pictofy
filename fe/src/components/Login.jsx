@@ -20,6 +20,7 @@ const Login = () => {
                             <input
                                 type="text"
                                 placeholder="Full Name"
+                                required
                                 className="pl-12 pr-4 py-3 w-full rounded-3xl outline-none border focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -33,6 +34,7 @@ const Login = () => {
                             <input
                                 type="email"
                                 placeholder="Email id"
+                                required
                                 className="pl-12 pr-4 py-3 w-full rounded-3xl outline-none border focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -46,6 +48,7 @@ const Login = () => {
                             <input
                                 type="password"
                                 placeholder="Password"
+                                required
                                 className="pl-12 pr-4 py-3 w-full rounded-3xl outline-none border focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
