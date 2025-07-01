@@ -5,7 +5,7 @@ import Login from './Login'
 
 
 const Navbar = () => {
-    const { user } = useContext(AppContext)
+    const { user, setShowLogin } = useContext(AppContext)
     const navigate = useNavigate()
 
     return (
@@ -36,7 +36,7 @@ const Navbar = () => {
                         <p onClick={() => navigate('/buy')} className='lg:text-[23px] lg:text-2xl font-medium cursor-pointer'>Pricing</p>
                         <div
                             className='flex items-center justify-center h-10 lg:h-12   px-9 lg:px-12  rounded-xl bg-gray-900'>
-                            <p className='text-center font-medium  lg:text-[23px]'>Login</p>
+                            <p onClick={() => setShowLogin(true)} className='text-center font-medium  lg:text-[23px]'>Login</p>
                         </div>
                     </div>
             }
