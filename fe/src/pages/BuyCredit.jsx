@@ -29,7 +29,7 @@ const BuyCredit = () => {
                 </div>
                 <div className='border px-5 md:px-10 py-5 md:py-7 flex flex-col items-start rounded-xl transition-all duration-300 hover:scale-105 gap-3'>
                     <img src="/assets/favicon_red.svg" />
-                    <h1 className='font-medium'>Basic</h1>
+                    <h1 className='font-medium'>Enterprise</h1>
                     <p className='font-light mb-3'>Best for enterprise use</p>
 
                     <p className=''><span className='text-2xl font-semibold'>$50</span> / 100 credits</p>
