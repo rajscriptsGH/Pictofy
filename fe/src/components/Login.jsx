@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext'
 
 const Login = () => {
     const [state, setState] = useState('Login')
-    const {setShowLogin } = useContext(AppContext)
+    const { setShowLogin } = useContext(AppContext)
 
     useEffect(() => {
         document.body.style.overflow = 'hidden'
@@ -20,7 +20,11 @@ const Login = () => {
 
                 <div className='flex flex-col items-center gap-4 mb-5'>
                     <h1 className='text-3xl font-medium'>{state}</h1>
-                    <p>Welcome back!  Please sign in to continue</p>
+                    <p>{state === 'Login' ?
+                        'Welcome back!  Please sign in to continue'
+                        :
+                        'Welcome!! Please signup to continue'
+                    }</p>
                 </div>
                 <div>
                     <div className='flex flex-col items-center gap-2'>
