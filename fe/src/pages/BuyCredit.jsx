@@ -1,11 +1,17 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
+import { motion } from 'framer-motion'
 
 const BuyCredit = () => {
     const { user } = useContext(AppContext)
 
     return (
-        <div className='flex flex-col items-center mt-10'>
+        <motion.div
+            initial={{ opacity: 0.2, y: 100 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className='flex flex-col items-center mt-10'>
             <div className='flex flex-col items-center gap-8 mb-5'>
                 <p className='border border-sky-200 px-12 py-2 rounded-full'>OUR PLAN</p>
                 <h1 className='text-3xl'>Choose the plan</h1>
@@ -36,7 +42,7 @@ const BuyCredit = () => {
                     <button className='bg-black px-8 py-2 rounded-3xl'>{user ? 'Purchase' : 'Get Started'}</button>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
