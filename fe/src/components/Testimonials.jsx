@@ -1,8 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Testimonials = () => {
     return (
-        <div className='mt-20 flex flex-col items-center justify-center'>
+        <motion.div
+            initial={{ opacity: 0.2, y: 100 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className='mt-20 flex flex-col items-center justify-center'>
             <div className='flex flex-col items-center mb-12'>
                 <h1 className='text-3xl lg:text-5xl font-medium mb-3'>Customer testimonials</h1>
                 <p className='font-light lg:text-2xl'>What our users are saying</p>
@@ -27,7 +33,7 @@ const Testimonials = () => {
                     <p>I've been using imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
