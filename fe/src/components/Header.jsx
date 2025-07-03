@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { easeOut, motion } from "motion/react"
+import {motion } from "motion/react"
 import { AppContext } from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-    const { user, setUser, setShowLogin } = useContext(AppContext)
+    const { user, setShowLogin } = useContext(AppContext)
     const navigate = useNavigate()
 
     function onClickHandler() {
