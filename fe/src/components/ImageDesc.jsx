@@ -1,8 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const ImageDesc = () => {
     return (
-        <div className=' mt-20 flex flex-col items-center '>
+        <motion.div
+            initial={{ opacity: 0.2, y: 100 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className=' mt-20 flex flex-col items-center '>
             <div className='flex flex-col items-center mb-12'>
                 <h1 className='text-4xl lg:text-5xl font-medium mb-4'>Create AI Images</h1>
                 <p className='font-light lg:text-2xl'>Turn your Imagination into Visuals</p>
@@ -15,7 +21,7 @@ const ImageDesc = () => {
                     <p className='font-light mt-3 hidden sm:block'>Simply type in a text prompt, and our cutting-edge AI will generate high-quality images in seconds. From product visuals to character designs and portraits, even concepts that don’t yet exist can be visualized effortlessly. Powered by advanced AI technology, the creative possibilities are limitless!</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
