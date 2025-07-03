@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const Result = () => {
     const [image, setImage] = useState('/assets/sample1.png')
@@ -11,7 +12,12 @@ const Result = () => {
     }
 
     return (
-        <form onSubmit={onSubmitHandler} className='flex flex-col items-center gap-4'>
+        <motion.form onSubmit={onSubmitHandler}
+            initial={{ opacity: 0.2, y: 100 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className='flex flex-col items-center gap-4'>
             <div className='mt-12'>
                 <div className='relative'>
                     <img className='h-[250px] rounded-lg' src={image} />
@@ -44,7 +50,7 @@ const Result = () => {
 
 
 
-        </form>
+        </motion.form>
     )
 }
 
