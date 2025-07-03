@@ -1,8 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const HowItWorks = () => {
     return (
-        <div className='flex flex-col items-center justify-center mt-20'>
+        <motion.div
+            initial={{ opacity: 0.2, y: 100 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className='flex flex-col items-center justify-center mt-20'>
             <div className='flex flex-col items-center mb-12'>
                 <h1 className='text-3xl lg:text-5xl font-semibold mb-4'>How its Works</h1>
                 <p className='font-light lg:text-2xl'>Transform Words into stunning images</p>
@@ -31,7 +37,7 @@ const HowItWorks = () => {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     )
 }
 
