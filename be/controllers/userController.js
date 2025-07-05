@@ -14,7 +14,11 @@ const registerUser = async (req, res) => {
             });
         }
 
-      
+        //hashing
+        const salt = await bycrypt.genSalt(5);
+        const hashPassword = await bycrypt.hash(password, salt);
+
+       
 
 
 
