@@ -18,6 +18,16 @@ const registerUser = async (req, res) => {
         const salt = await bycrypt.genSalt(5);
         const hashPassword = await bycrypt.hash(password, salt);
 
+        //store user in db
+        const userData = {
+            name,
+            email,
+            password: hashPassword
+        }
+
+        const newUser = new userModel(userData)
+        const user = await newUser.save();
+
        
 
 
