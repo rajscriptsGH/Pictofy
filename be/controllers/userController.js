@@ -1,8 +1,7 @@
 import userModel from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import dotenv from 'dotenv'
-dotenv.config()
+
 
 export const registerUser = async (req, res) => {
     try {
@@ -19,8 +18,8 @@ export const registerUser = async (req, res) => {
         //hashing
         const salt = await bcrypt.genSalt(5);
         const hashPassword = await bcrypt.hash(password, salt);
-        console.log(password);
-        console.log(hashPassword);
+        // console.log(password);
+        // console.log(hashPassword);
 
 
         //store user in db
