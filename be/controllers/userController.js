@@ -1,6 +1,7 @@
 import userModel from "../models/userModel.js";
 import bycrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { use } from "react";
 
 const registerUser = async (req, res) => {
     try {
@@ -32,6 +33,13 @@ const registerUser = async (req, res) => {
         const token = jwt.sign({
             id: user._id
         }, process.env.JWT_SECRET)
+
+        //send token 
+        res.json({
+            success: true,
+            token,
+            user: { name: user.name }
+        })
 
 
 
