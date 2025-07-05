@@ -1,8 +1,9 @@
 import userModel from "../models/userModel.js";
-import bycrypt from "bcrypt";
+import bcrypt from "bcrypt";
+import { json } from "express";
 import jwt from "jsonwebtoken";
 
-const registerUser = async (req, res) => {
+export const registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
@@ -15,13 +16,13 @@ const registerUser = async (req, res) => {
         }
 
         //hashing
-        const salt = await bycrypt.genSalt(5);
-        const hashPassword = await bycrypt.hash(password, salt);
+        const salt = await bcrypt.genSalt(5);
+        const hashPassword = await bcrypt.hash(password, salt);
 
         //store user in db
         const userData = {
-            name,
-            email,
+            name: name,
+            email: email,
             password: hashPassword
         }
 
@@ -53,7 +54,7 @@ const registerUser = async (req, res) => {
 };
 
 
-const loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
 
@@ -67,12 +68,19 @@ const loginUser = async (req, res) => {
         }
 
         //match password
-        const isMatch = await bycrypt.compare(password, user.password)
+        const isMatch = await bcrypt.compare(password, user.password)
 
         if (isMatch) {
             const token = jwt.sign({
                 id: user._id
             }, process.env.JWT_SECRET)
+
+            return res.json({
+                success: true,
+                token,
+                user: { name: user.name }
+            })
+
         } else {
             return res.json({
                 success: false,
@@ -85,7 +93,8 @@ const loginUser = async (req, res) => {
 
         res.json({
             success: false,
-            msg: { error: error.msg }
+            msg: error.msg
         })
     }
 }
+
