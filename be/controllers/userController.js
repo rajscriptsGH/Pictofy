@@ -1,7 +1,6 @@
 import userModel from "../models/userModel.js";
 import bycrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { use } from "react";
 
 const registerUser = async (req, res) => {
     try {
@@ -52,3 +51,8 @@ const registerUser = async (req, res) => {
 
     }
 };
+
+
+const userLogin = async (req, res) => {
+
+}
