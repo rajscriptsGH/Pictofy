@@ -70,9 +70,23 @@ const userLogin = async (req, res) => {
         //match password
         const isMatch = await bycrypt.compare(password, user.password)
 
-
+        if (isMatch) {
+            const token = jwt.sign({
+                id: user._id
+            }, process.env.JWT_SECRET)
+        } else {
+            return res.json({
+                success: false,
+                msg: "Wrong credential"
+            });
+        }
 
     } catch (error) {
+        console.log(error);
 
+        res.json({
+            success: false,
+            msg: { error: error.msg }
+        })
     }
 }
