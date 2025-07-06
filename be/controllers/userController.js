@@ -101,3 +101,6 @@ export const loginUser = async (req, res) => {
     }
 }
 
+userCredits = async (req, res) => {
+
+}
