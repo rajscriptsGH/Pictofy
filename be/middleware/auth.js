@@ -5,7 +5,7 @@ export const userAuth = async (req, res, next) => {
     const { token } = req.headers;
 
     if (!token) {
-        return res.json({
+        return res.status(401).json({
             success: false,
             msg: 'Not authorized login again'
         });
@@ -16,24 +16,24 @@ export const userAuth = async (req, res, next) => {
         //Step2: verify and decode it
         const decodeToken = jwt.verify(token, process.env.JWT_SECRET)
 
-        if (decodeToken.id) {
+        if (decodeToken?.id) {
 
             //Step3: extract userID or username
-            req.body.userID = decodeToken.id
+            req.userId = decodeToken.id
+            next();
         } else {
-            return res.json({
+            return res.status(401).json({
                 success: false,
-                msg: 'Not authorized login again'
+                msg: 'Invalid token'
             })
         }
-        next();
 
     } catch (error) {
-        console.log(error);
+        console.log("auth error", error);
 
-        return res.json({
+        return res.status(401).json({
             success: false,
-            msg: error.msg
-        });
+            msg: 'Invalid token'
+        })
     }
 }
