@@ -5,6 +5,7 @@ dotenv.config()
 
 import connectDB from './config/mongodb.js'
 import userRouter from './routes/userRoute.js'
+import imageRouter from './routes/imageRoute.js'
 
 const PORT = process.env.PORT || 3300
 
@@ -15,6 +16,7 @@ app.use(cors())
 await connectDB()
 
 app.use('/api/user', userRouter)
+app.use('/api/image', imageRouter)
 
 app.post('/', (req, res) => {
     res.send("api working")
