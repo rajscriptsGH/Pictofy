@@ -103,9 +103,15 @@ export const loginUser = async (req, res) => {
 
 export const userCredits = async (req, res) => {
     try {
-        const { userId } = req.body;
+        const user = await userModel.findById(req.userId)
 
-        const user = await userModel.findById(userId)
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                msg: "User not found"
+            });
+        }
+
         res.json({
             success: true,
             credits: user.credit,
