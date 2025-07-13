@@ -1,14 +1,5 @@
-import OpenAI from "openai";
+import axios from "axios";
 import UserModel from "../models/userModel.js";
-
-console.log("Environment check:", {
-    OPENAI_API_KEY: process.env.OPENAI_API_KEY ? 'Found' : 'Not found',
-    NODE_ENV: process.env.NODE_ENV
-});
-
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
 
 export const imageController = async (req, res) => {
     try {
@@ -36,25 +27,27 @@ export const imageController = async (req, res) => {
             });
         }
 
-        const response = await openai.images.generate({
-            model: "dall-e-3",
-            prompt: prompt,
-            n: 1,
-            size: "1024x1024", 
-            response_format: "b64_json" 
-        });
+        const response = await axios.post(
+            "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2",
+            { inputs: prompt },
+            {
+                headers: {
+                    Authorization: `Bearer ${process.env.HF_API_TOKEN}`,
+                    "Content-Type": "application/json"
+                }
+            }
+        );
 
-        const imageData = response.data[0];
+        const imageBase64 = response.data?.[0];
 
-        if (!imageData || !imageData.b64_json) {
+        if (!imageBase64) {
             return res.status(500).json({
                 success: false,
-                msg: "Failed to generate image",
+                msg: "Failed to receive valid image data",
             });
         }
 
-        const imageBase64 = imageData.b64_json;
-
+        // Deduct credit
         user.credit -= 1;
         await user.save();
 
@@ -64,19 +57,12 @@ export const imageController = async (req, res) => {
             remainingCredits: user.credit,
             msg: "Image generated successfully",
         });
+
     } catch (error) {
-        console.error("Image Controller Error:", error);
-
-        if (error.status) {
-            return res.status(error.status).json({
-                success: false,
-                msg: error.message || "OpenAI API Error",
-            });
-        }
-
+        console.error("Image Controller Error:", error.response?.data || error.message);
         res.status(500).json({
             success: false,
-            msg: "Internal Server Error while generating image",
+            msg: "Failed to generate image. Check API key or server status.",
         });
     }
 };
