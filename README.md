@@ -3,7 +3,7 @@
 Turn your imagination into visuals. **Pictofy** is a modern AI-powered web app that generates stunning images from text prompts using models like DALL·E or Stable Diffusion.
 
 ## 🌐 Live Demo
-[https://pictofy.vercel.app](https://pictofy.vercel.app) *(update with your deployed link)*
+[https://pictofy.vercel.app](https://pictofy.vercel.app) *(Deployed link comming soon)*
 
 ---
 
